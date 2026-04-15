@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Dresses Collection</title>
+    <link rel="stylesheet" href="style_comp.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+        <p class="loading-text">Loading Elegant Collection...</p>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="animated-nav">
+        <div class="nav-container">
+            <div class="nav-logo">Elegance</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#collection">Collection</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="cart-icon">
+                <span>🛒</span>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Image -->
+    <section class="hero" id="home">
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Elegant Dresses Collection">
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Elegant Dresses Collection</h1>
+            <p class="hero-subtitle">Discover timeless beauty in every stitch</p>
+            <button class="cta-button pulse" onclick="scrollToCollection()">Explore Collection</button>
+        </div>
+    </section>
+
+    <!-- Featured Dresses Section -->
+    <section class="products-section" id="collection">
+        <h2 class="section-title">Featured Dresses</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterDresses('all')">All Dresses</button>
+            <button class="filter-btn" onclick="filterDresses('evening')">Evening</button>
+            <button class="filter-btn" onclick="filterDresses('wedding')">Wedding</button>
+            <button class="filter-btn" onclick="filterDresses('cocktail')">Cocktail</button>
+        </div>
+        <div class="products-grid">
+            <!-- Dress 1 -->
+            <div class="product-card slide-in" data-category="evening">
+                <div class="product-image">
+                    <img src="https://i.pinimg.com/736x/19/a5/63/19a56343c6325078ffb7b6a08cd88c0e.jpg" alt="Evening Gown">
+                    <div class="product-badge">New</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Midnight Elegance Gown</h3>
+                    <p class="product-description">Floor-length evening gown with sequin details</p>
+                    <div class="product-price">$299.99</div>
+                    <div class="size-selector">
+                        <select class="size-dropdown">
+                            <option value="">Select Size</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                            <option value="XXXL">XXXL</option>
+                        </select>
+                    </div>
+                    <button class="product-button" onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Dress 2 -->
+            <div class="product-card slide-in" data-category="wedding">
+                <div class="product-image">
+                    <img src="https://i.pinimg.com/1200x/cb/57/c9/cb57c98a7e6909d7147f4c0c2767b29a.jpg" alt="Wedding Dress">
+                    <div class="product-badge">Bestseller</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Ivory Wedding Dress</h3>
+                    <p class="product-description">Lace wedding dress with cathedral train</p>
+                    <div class="product-price">$899.99</div>
+                    <div class="size-selector">
+                        <select class="size-dropdown">
+                            <option value="">Select Size</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                            <option value="XXXL">XXXL</option>
+                        </select>
+                    </div>
+                    <button class="product-button" onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Dress 3 -->
+            <div class="product-card slide-in" data-category="cocktail">
+                <div class="product-image">
+                    <img src="https://i.pinimg.com/1200x/f5/11/27/f5112758ac01dce22fd84d58221a0910.jpg" alt="Cocktail Dress">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Black Cocktail Dress</h3>
+                    <p class="product-description">Classic little black dress for any occasion</p>
+                    <div class="product-price">$159.99</div>
+                    <div class="size-selector">
+                        <select class="size-dropdown">
+                            <option value="">Select Size</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                            <option value="XXXL">XXXL</option>                            
+                        </select>
+                    </div>
+                    <button class="product-button" onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Dress 4 -->
+            <div class="product-card slide-in" data-category="evening">
+                <div class="product-image">
+                    <img src="https://i.pinimg.com/1200x/a3/df/82/a3df822adfb2c0cc05bdd05df406d80e.jpg" alt="Red Evening Dress">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Scarlet Red Evening Dress</h3>
+                    <p class="product-description">Bold red dress with elegant draping</p>
+                    <div class="product-price">$249.99</div>
+                    <div class="size-selector">
+                        <select class="size-dropdown">
+                            <option value="">Select Size</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                            <option value="XXXL">XXXL</option>
+                        </select>
+                    </div>
+                    <button class="product-button" onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Dress 5 -->
+            <div class="product-card slide-in" data-category="wedding">
+                <div class="product-image">
+                    <img src="https://i.pinimg.com/736x/d6/f6/f0/d6f6f030061f7415c2836e5ef1ef15c2.jpg" alt="Bridal Gown">
+                    <div class="product-badge">Sale</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">A-line Bridal Gown</h3>
+                    <p class="product-description">Elegant A-line wedding dress with beaded bodice</p>
+                    <div class="product-price">$799.99 <span class="original-price">$999.99</span></div>
+                    <div class="size-selector">
+                        <select class="size-dropdown">
+                            <option value="">Select Size</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                            <option value="XXXL">XXXL</option>
+                        </select>
+                    </div>
+                    <button class="product-button" onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Dress 6 -->
+            <div class="product-card slide-in" data-category="cocktail">
+                <div class="product-image">
+                    <img src="http://i.pinimg.com/1200x/52/84/e8/5284e8bef28925a0c0ed006f8035ea69.jpg" alt="Floral Dress">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Floral Print Cocktail Dress</h3>
+                    <p class="product-description">Beautiful floral pattern for garden parties</p>
+                    <div class="product-price">$189.99</div>
+                    <div class="size-selector">
+                        <select class="size-dropdown">
+                            <option value="">Select Size</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                            <option value="XXXL">XXXL</option>
+                        </select>
+                    </div>
+                    <button class="product-button" onclick="addToCart(this)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Hide loading spinner after page load
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        document.getElementById('loadingSpinner').style.display = 'none';
+    }, 2000);
+});
+
+// Cart functionality
+let cartCount = 0;
+
+function addToCart(button) {
+    const productCard = button.closest('.product-card');
+    const productName = productCard.querySelector('.product-name').textContent;
+    const productPrice = productCard.querySelector('.product-price').textContent;
+    const sizeSelect = productCard.querySelector('.size-dropdown');
+    const selectedSize = sizeSelect.value;
+    
+    if (!selectedSize) {
+        alert('Please select a size before adding to cart.');
+        return;
+    }
+    
+    cartCount++;
+    updateCartCount();
+    
+    // Add animation to button
+    button.textContent = 'Added!';
+    button.style.background = '#50C878';
+    
+    setTimeout(() => {
+        button.textContent = 'Add to Cart';
+        button.style.background = '';
+    }, 2000);
+    
+    console.log(`Added to cart: ${productName} - Size: ${selectedSize} - ${productPrice}`);
+}
+
+function updateCartCount() {
+    const cartCountElement = document.querySelector('.cart-count');
+    cartCountElement.textContent = cartCount;
+    cartCountElement.style.animation = 'none';
+    setTimeout(() => {
+        cartCountElement.style.animation = 'bounce 0.5s ease';
+    }, 10);
+}
+
+// Filter functionality
+function filterDresses(category) {
+    const dresses = document.querySelectorAll('.product-card');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    // Update active button
+    filterButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.textContent.toLowerCase().includes(category)) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Filter dresses
+    dresses.forEach(dress => {
+        if (category === 'all' || dress.dataset.category === category) {
+            dress.style.display = 'block';
+            dress.style.animation = 'slideIn 0.6s ease-out forwards';
+        } else {
+            dress.style.display = 'none';
+        }
+    });
+}
+
+// Smooth scroll to collection
+function scrollToCollection() {
+    document.getElementById('collection').scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+
+// Add hover effect to product cards
+document.addEventListener('DOMContentLoaded', function() {
+    const productCards = document.querySelectorAll('.product-card');
+    
+    productCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.animationPlayState = 'paused';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.animationPlayState = 'running';
+        });
+    });
+});
+
+// Parallax effect for hero image
+window.addEventListener('scroll', function() {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector('.hero-image');
+    if (hero) {
+        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+    }
+});
+    </script>
+    <footer> 
+        &copy; 2025 Gazelle Pearson | Product Exercise 3 Comp
+    </footer>
+</body>
+</html>
